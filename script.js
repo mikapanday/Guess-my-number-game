@@ -23,9 +23,16 @@ document.querySelector(".check").addEventListener("click", function () {
   console.log(guess, typeof guess);
 
   if (!guess) {
+    //When there is no input
     document.querySelector(".message").textContent = "No Number!";
   } else if (guess === secretNumber) {
+    //When Player wins
     document.querySelector(".message").textContent = "Correct Number!";
+
+    document.querySelector("body").style.backgroundColor = "#60b347";
+
+    document.querySelector("number").style.width = "30 rem";
+    //When Playet guess is too high
   } else if (guess > secretNumber) {
     if (score > 1) {
       document.querySelector(".message").textContent = "Number is too high!";
